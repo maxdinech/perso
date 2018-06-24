@@ -10,7 +10,7 @@ import itertools
 
 ```Python
 itertools.count(start [,step])
->>> count(10) --> 10 11 12 13 14 ...
+>>> count(10) >>> 10 11 12 13 14 ...
 ```
 
 ```Python
