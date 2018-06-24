@@ -15,12 +15,12 @@ itertools.count(start [,step])
 
 ```Python
 itertools.cycle(p)
-cycle('ABCD') --> A B C D A B C D ...
+cycle('ABCD') -> A B C D A B C D ...
 ```
 
 ```Python
 itertools.repeat(elem [,n])
-repeat(10, 3) --> 10 10 10
+repeat(10, 3) ==> 10 10 10
 ```
 
 # Itérateurs terminant sur la séquence la plus courte
