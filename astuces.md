@@ -58,11 +58,30 @@ def duree(f):
 >>> duree(f)(*args)
 ```
 
-## Arbres en python
 
-Noeuds = iterables (ex: tuples ou listes)
+## Arbres en python (1)
 
-Feuilles = non iterables (ex: flottants ou entiers)
+```Python
+>>> from collections import defaultdict
+>>> def tree(): return defaultdict(tree)
+```
+
+Un arbre est un `defaultdict` contenant des arbres ! -> les feuilles sont des `defaultdict`
+
+Conversion en dict simple pour un meilleur parcours:
+
+```Python
+>>> def dicts(t): return {k: dicts(t[k]) for k in t}
+```
+
+## Arbres en python (2)
+
+Alternative : les noeuds sont des tuples, les feuilles des entiers (et pas des tuples de taille 1 !)
+
+Ou de manière plus générale :
+
+- Noeuds = iterables (ex: tuples ou listes)
+- Feuilles = non iterables (ex: flottants ou entiers)
 
 ```Python
 >>> from collections import Iterable
@@ -126,21 +145,6 @@ Deuxieme usage : lance le code dans un str
 
 Possibilité d'inverser le tri
 
-## Arbres en python
-
-```Python
->>> from collections import defaultdict
->>> def tree(): return defaultdict(tree)
-```
-
-Un arbre est un `defaultdict` contenant des arbres ! -> les feuilles sont des `defaultdict`
-
-# Conversion en dict simple pour un meilleur parcours:
-
-```Python
->>> def dicts(t): return {k: dicts(t[k]) for k in t}
-```
-
 ## Compter et remplaver des élements facilement
 
 ```Python
@@ -169,7 +173,7 @@ Marche avec chaînes, listes, tuples...
 ## Existence d'une variable
 
 ```Python
->>>'var' in locals()
+>>> 'var' in locals()
 False
 >>> var = 0
 >>>'var' in locals()
@@ -305,8 +309,6 @@ True
 >>> list(zip(*mat))
 [(1, 4), (2, 5), (3, 6)]
 ```
-
-(le splat passe une liste d'arguments en arguments distincts)
 
 ## Diviser une liste en groupes de n avec zip
 
